@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
 }
 
@@ -14,75 +13,93 @@ body {
 }
 
 .hand {
-    width: 600px;
-    height: 100px;
-    background-color: lightgray;
+    width: 500px;
+    height: 50px;
+    background-color: #ccc;
     text-align: center;
-    line-height: 100px;
-    font-weight: bold;
+    line-height: 50px;
+}
+
+.opponent-hand {
+    order: 1;
+}
+
+.player-hand {
+    order: 6;
 }
 
 .field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 600px;
-}
-
-.deck-zone, .graveyard-zone {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.deck, .graveyard, .banish {
-    width: 80px;
-    height: 80px;
-    border: 1px dashed black;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: auto;
+    gap: 5px;
     justify-content: center;
-    background-color: white;
 }
 
-.play-area {
+.deck-zone {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.ex-area {
-    display: flex;
-    flex-direction: row;
     gap: 5px;
 }
 
-.ex-slot {
-    width: 80px;
-    height: 80px;
+.deck {
+    width: 100px;
+    height: 50px;
     border: 1px dashed black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: lightgray;
+    text-align: center;
+    line-height: 50px;
 }
 
 .leader-zone {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 20px;
 }
 
 .leader {
     width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    font-weight: bold;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
 }
 
+.play-area {
+    display: flex;
+    gap: 5px;
+}
+
+.field-slot {
+    width: 100px;
+    height: 50px;
+    border: 1px dashed black;
+    text-align: center;
+    line-height: 50px;
+}
+
+.ex-area {
+    display: flex;
+    gap: 5px;
+}
+
+.ex-slot {
+    width: 100px;
+    height: 50px;
+    background-color: #aaa;
+    text-align: center;
+    line-height: 50px;
+}
+
+.graveyard-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.graveyard, .banish {
+    width: 100px;
+    height: 50px;
+    border: 1px dashed black;
+    text-align: center;
+    line-height: 50px;
+}
