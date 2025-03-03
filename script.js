@@ -1,10 +1,10 @@
 // デッキ情報（仮のデータ）
 let deck = [
-    { id: 1, name: "カードA", image: "cardA.png" },
-    { id: 2, name: "カードB", image: "cardB.png" },
-    { id: 3, name: "カードC", image: "cardC.png" },
-    { id: 4, name: "カードD", image: "cardD.png" },
-    { id: 5, name: "カードE", image: "cardE.png" }
+//    { id: 1, name: "カードA", image: "cardA.png" },
+//    { id: 2, name: "カードB", image: "cardB.png" },
+//    { id: 3, name: "カードC", image: "cardC.png" },
+//    { id: 4, name: "カードD", image: "cardD.png" },
+//    { id: 5, name: "カードE", image: "cardE.png" }
 ];
 
 let hand = []; // 手札を管理する配列
