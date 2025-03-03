@@ -1,65 +1,88 @@
-/* CSSファイルの更新 */
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
 .game-board {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    gap: 10px;
-    width: 80vw;
-    max-width: 800px;
-}
-
-.row {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
-.card-slot {
+.hand {
+    width: 600px;
+    height: 100px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.deck-zone, .graveyard-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.deck, .graveyard, .banish {
     width: 80px;
     height: 80px;
     border: 1px dashed black;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background-color: white;
 }
 
-.hand-zone {
+.play-area {
     display: flex;
-    justify-content: center;
-    gap: 5px;
-    background-color: #ccc;
-    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .ex-area {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.ex-slot {
+    width: 80px;
+    height: 80px;
+    border: 1px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
 }
 
 .leader-zone {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
-.field-zone {
+.leader {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    background-color: white;
+    font-weight: bold;
 }
 
-.deck-area {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
