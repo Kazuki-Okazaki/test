@@ -15,6 +15,7 @@ if (deckString) {
     const deck = JSON.parse(deck);
     console.log("取得したデッキ:", deck);
 }
+updateDeckCount();
 
 // デッキの残り枚数を更新
 function updateDeckCount() {
