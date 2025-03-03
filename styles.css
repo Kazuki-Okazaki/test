@@ -1,105 +1,45 @@
+/* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
 }
 
 .game-container {
+    width: 800px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px;
-}
-
-/* 上段（エボルヴデッキ・フィールド・メインデッキ） */
-.upper-zone {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
     gap: 10px;
 }
 
-.deck {
-    width: 120px;
-    height: 180px;
-    background-color: white;
+/* 各ゾーンの基本スタイル */
+.upper-zone, .middle-zone, .lower-zone {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
     border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-color: white;
 }
 
-.field-container {
-    display: flex;
-    gap: 10px;
-}
-
-.field-slot {
+/* カードやデッキのスタイル */
+.deck, .field-slot, .banish-zone, .ex-slot, .graveyard, .hand {
     width: 100px;
     height: 150px;
-    background-color: lightgray;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 中段（消滅領域・EXエリア・墓場） */
-.middle-zone {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-}
-
-.banish-zone, .graveyard {
-    width: 120px;
-    height: 180px;
-    background-color: white;
-    border: 2px solid black;
+    border: 2px dashed gray;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #e0e0e0;
 }
 
-.ex-container {
+/* 特定エリアの調整 */
+.field-container, .ex-container {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
-.ex-slot {
-    width: 80px;
-    height: 120px;
-    background-color: lightgray;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 下段（手札） */
-.lower-zone {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.hand {
-    width: 600px;
-    height: 120px;
-    background-color: white;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
