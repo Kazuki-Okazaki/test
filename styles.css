@@ -1,54 +1,105 @@
-/* 全体の設定 */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
 }
 
-/* ゲームコンテナ */
 .game-container {
-    width: 800px;
     display: flex;
-    flex-direction: column; /* 上中下の3段構成 */
-    gap: 10px; /* 各ゾーンの間隔 */
-}
-
-/* 各ゾーン（上・中・下） */
-.upper-zone, .middle-zone, .lower-zone {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
-    background-color: white;
-    border: 2px solid #333;
-    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
 }
 
-/* ゾーンごとの高さ */
-.upper-zone { height: 150px; }
-.middle-zone { height: 120px; }
-.lower-zone { height: 100px; }
+/* 上段（エボルヴデッキ・フィールド・メインデッキ） */
+.upper-zone {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
 
-/* フィールドエリア */
-.field-slot, .ex-slot, .deck, .banish-zone, .graveyard, .hand {
-    width: 100px;
-    height: 100px;
+.deck {
+    width: 120px;
+    height: 180px;
+    background-color: white;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #000;
-    background-color: #ddd;
-    border-radius: 10px;
     text-align: center;
 }
 
-/* フィールドのマスを均等配置 */
-.upper-zone .deck,
-.middle-zone .banish-zone,
-.middle-zone .graveyard {
+.field-container {
+    display: flex;
+    gap: 10px;
+}
+
+.field-slot {
+    width: 100px;
+    height: 150px;
+    background-color: lightgray;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 中段（消滅領域・EXエリア・墓場） */
+.middle-zone {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.banish-zone, .graveyard {
     width: 120px;
+    height: 180px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ex-container {
+    display: flex;
+    gap: 10px;
+}
+
+.ex-slot {
+    width: 80px;
+    height: 120px;
+    background-color: lightgray;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 下段（手札） */
+.lower-zone {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.hand {
+    width: 600px;
+    height: 120px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
