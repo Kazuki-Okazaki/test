@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     background-color: white;
     padding: 10px;
 }
@@ -57,12 +57,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.leader-zone {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
 }
 
 .deck, .banish, .graveyard {
