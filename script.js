@@ -14,7 +14,7 @@ const deckString = localStorage.getItem(deckName);
 if (deckString) {
     const deck = JSON.parse(deck);
     console.log("取得したデッキ:", deck);
-}else {
+} else {
     console.log("デッキが見つかりません");
 }
 updateDeckCount();
