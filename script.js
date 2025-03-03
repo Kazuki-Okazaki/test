@@ -14,16 +14,20 @@ let deck = {
 
 let hand = []; // 手札を管理する配列
 
-const deckName = prompt("デッキ名を入力してください:");
-const deckString = localStorage.getItem(deckName);
-if (deckString) {
-    const deck = JSON.parse(deck);
-    console.log("取得したデッキ:", deck);
-} else {
-    console.log("デッキが見つかりません");
-}
-updateDeckCount();
+getDeck();
 
+// デッキ読み込み
+function getDeck() {
+    const deckName = prompt("デッキ名を入力してください:");
+    const deckString = localStorage.getItem(deckName);
+    if (deckString) {
+        const deck = JSON.parse(deck);
+        console.log("取得したデッキ:", deck);
+    } else {
+        console.log("デッキが見つかりません");
+    }
+    updateDeckCount();
+}
 // デッキの残り枚数を更新
 function updateDeckCount() {
     document.getElementById("deck-count").innerText = deck.main.length;
