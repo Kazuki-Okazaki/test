@@ -41,6 +41,6 @@ function drawCard() {
 }
 
 // 初期化（ページロード時に実行）
-document.addEventListener("DOMContentLoaded", () => {
+//document.addEventListener("DOMContentLoaded", () => {
     updateDeckCount();
-});
+//});
