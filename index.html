@@ -4,33 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ゲームレイアウト</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <div class="row" id="top-row">
-            <div class="zone" id="evolve-deck">エボルヴデッキ</div>
-            <div class="zone" id="field1">フィールド①</div>
-            <div class="zone" id="field2">フィールド②</div>
-            <div class="zone" id="field3">フィールド③</div>
-            <div class="zone" id="field4">フィールド④</div>
-            <div class="zone" id="field5">フィールド⑤</div>
-            <div class="zone" id="main-deck">メインデッキ</div>
+        <div class="upper-zone">
+            <div class="deck leader">リーダーカード</div>
+            <div class="deck">エボルヴデッキ</div>
+            <div class="field-container">
+                <div class="field-slot">フィールド1</div>
+                <div class="field-slot">フィールド2</div>
+                <div class="field-slot">フィールド3</div>
+                <div class="field-slot">フィールド4</div>
+                <div class="field-slot">フィールド5</div>
+            </div>
+            <div class="deck">メインデッキ</div>
         </div>
-        <div class="leader-card">リーダーカード</div>
-        <div class="row" id="middle-row">
-            <div class="zone" id="banish">消滅領域</div>
-            <div class="zone" id="ex1">EXエリア①</div>
-            <div class="zone" id="ex2">EXエリア②</div>
-            <div class="zone" id="ex3">EXエリア③</div>
-            <div class="zone" id="ex4">EXエリア④</div>
-            <div class="zone" id="ex5">EXエリア⑤</div>
-            <div class="zone" id="graveyard">墓場</div>
+
+        <div class="middle-zone">
+            <div class="banish-zone">消滅領域</div>
+            <div class="ex-container">
+                <div class="ex-slot">EX1</div>
+                <div class="ex-slot">EX2</div>
+                <div class="ex-slot">EX3</div>
+                <div class="ex-slot">EX4</div>
+                <div class="ex-slot">EX5</div>
+            </div>
+            <div class="graveyard">墓場</div>
         </div>
-        <div class="row" id="bottom-row">
-            <div class="zone" id="hand">手札</div>
+
+        <div class="lower-zone">
+            <div class="hand">手札</div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
