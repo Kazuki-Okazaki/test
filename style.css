@@ -1,61 +1,71 @@
+/* styles.css */
 body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+td, th {
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid black;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 10px;
+    width: 800px;
+}
+
+.opponent-hand, .player-hand {
+    text-align: center;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.opponent-board, .player-board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
     background-color: white;
     padding: 10px;
 }
 
-.hand, .opponent-hand {
-    width: 600px;
-    height: 50px;
-    background-color: lightgray;
+.opponent-field, .player-field {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.leaders {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 5px 0;
+    gap: 20px;
 }
 
-.middle-zone, .upper-zone {
-    display: flex;
-    justify-content: space-around;
-    width: 600px;
-    margin: 5px 0;
-}
-
-.ex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 250px;
-}
-
-.ex-slot, .field-slot, .deck, .banish-zone, .graveyard {
-    width: 80px;
-    height: 100px;
+.zone {
     border: 1px dashed black;
-    background-color: lightgray;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: white;
 }
 
-.leader-zone {
-    width: 100px;
-    height: 120px;
-    background-color: white;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
+.banish, .graveyard {
+    background-color: lightgray;
 }
