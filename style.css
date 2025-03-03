@@ -1,61 +1,79 @@
+/* style.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center;
+    background-color: #f8f8f8;
 }
 
 .game-board {
-    display: grid;
-    grid-template-rows: auto auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    text-align: center;
-    width: 80%;
-    max-width: 800px;
+    padding: 20px;
 }
 
 .hand {
-    background-color: #ccc;
+    width: 80%;
     padding: 10px;
-    font-weight: bold;
+    background-color: #ccc;
+    border-radius: 5px;
 }
 
 .field {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
+    padding: 10px;
 }
 
-.deck-zone, .graveyard-zone {
+.deck-zone {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.deck {
+    width: 80px;
+    height: 120px;
+    border: 2px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 
 .play-area {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
-.ex-area {
+.banish-zone, .graveyard-zone {
+    width: 80px;
+    height: 120px;
+    border: 2px dashed black;
     display: flex;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 
-.ex-slot {
-    width: 50px;
-    height: 50px;
-    background-color: #999;
-    text-align: center;
-    line-height: 50px;
-    border: 1px solid black;
+.battlefield {
+    display: flex;
+    gap: 10px;
+}
+
+.field-slot {
+    width: 80px;
+    height: 100px;
+    background-color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
 }
 
 .leader-zone {
@@ -66,24 +84,11 @@ body {
 
 .leader {
     width: 80px;
-    height: 80px;
-    background-color: white;
-    text-align: center;
-    line-height: 80px;
-    border: 2px solid black;
-    font-weight: bold;
-}
-
-.deck, .graveyard, .banish {
-    width: 70px;
     height: 100px;
-    border: 1px dashed black;
-    text-align: center;
-    line-height: 100px;
-    font-size: 14px;
     background-color: white;
-}
-
-.reverse {
-    flex-direction: row-reverse;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
