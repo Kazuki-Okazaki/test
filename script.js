@@ -21,7 +21,7 @@ function getDeck() {
     const deckName = prompt("デッキ名を入力してください:");
     const deckString = localStorage.getItem(deckName);
     if (deckString) {
-        const deck = JSON.parse(deck);
+        const deck = JSON.parse(deckName);
         console.log("取得したデッキ:", deck);
     } else {
         console.log("デッキが見つかりません");
