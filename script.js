@@ -29,6 +29,7 @@ function updateHandDisplay() {
 
 // カードを1枚ドローする
 function drawCard() {
+    updateDeckCount();
     if (deck.length === 0) {
         alert("デッキが空です！");
         return;
