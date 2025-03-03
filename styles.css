@@ -1,0 +1,52 @@
+/* 全体レイアウト */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ゾーン共通のスタイル */
+.zone {
+    border: 2px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 3段構成 */
+.upper-zone, .middle-zone, .lower-zone {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* カード束 */
+.deck, .graveyard, .banish-zone {
+    width: 80px;
+    height: 120px;
+    border: 2px solid black;
+}
+
+/* フィールド・EXエリア */
+.field-slot, .ex-slot {
+    width: 100px;
+    height: 120px;
+    border: 2px dashed gray;
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+/* 手札 */
+.hand {
+    display: flex;
+    gap: 5px;
+}
+.hand-card {
+    width: 80px;
+    height: 120px;
+    border: 2px solid blue;
+}
