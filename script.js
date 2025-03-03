@@ -18,7 +18,7 @@ getDeck();
 
 // デッキ読み込み
 function getDeck() {
-    const deckName = prompt("デッキ名を入力してください:");
+    const deckName = `deckData_${prompt("デッキ名を入力してください:")}`;
     const deckString = localStorage.getItem(deckName);
     if (deckString) {
         const deck = JSON.parse(deckName);
