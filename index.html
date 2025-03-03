@@ -3,72 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カードゲーム盤面</title>
+    <title>ゲーム画面</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-board">
+
+        <!-- 相手の手札 -->
         <div class="hand opponent-hand">相手の手札</div>
 
-        <div class="field opponent-field">
-            <div class="side-zones">
-                <div class="deck main-deck">メインデッキ</div>
-                <div class="deck evol-deck">エボルヴデッキ</div>
-                <div class="banish">消滅領域</div>
+        <div class="row">
+            <div class="side left">
+                <div class="deck-area">メインデッキ</div>
+                <div class="key-area">キー</div>
+                <div class="banish-area">消滅領域</div>
+                <div class="evolve-deck">エボルヴデッキ</div>
             </div>
-            <div class="play-area">
-                <div class="ex-area">
-                    <div class="ex-slot">EX1</div>
-                    <div class="ex-slot">EX2</div>
-                    <div class="ex-slot">EX3</div>
-                    <div class="ex-slot">EX4</div>
-                    <div class="ex-slot">EX5</div>
+
+            <div class="field">
+                <!-- 相手の盤面 -->
+                <div class="ex-zone">
+                    <div class="card">EX1</div>
+                    <div class="card">EX2</div>
+                    <div class="card">EX3</div>
+                    <div class="card">EX4</div>
+                    <div class="card">EX5</div>
                 </div>
-                <div class="field-area">
-                    <div class="field-slot">F1</div>
-                    <div class="field-slot">F2</div>
-                    <div class="field-slot">F3</div>
-                    <div class="field-slot">F4</div>
-                    <div class="field-slot">F5</div>
+                <div class="main-field">
+                    <div class="card">F1</div>
+                    <div class="card">F2</div>
+                    <div class="card">F3</div>
+                    <div class="card">F4</div>
+                    <div class="card">F5</div>
                 </div>
-                <div class="leader-zone">
+
+                <!-- リーダー -->
+                <div class="leader-area">
                     <div class="leader">相手リーダー</div>
                     <div class="leader">自分リーダー</div>
                 </div>
+
+                <!-- 自分の盤面 -->
+                <div class="main-field">
+                    <div class="card">F1</div>
+                    <div class="card">F2</div>
+                    <div class="card">F3</div>
+                    <div class="card">F4</div>
+                    <div class="card">F5</div>
+                </div>
+                <div class="ex-zone">
+                    <div class="card">EX1</div>
+                    <div class="card">EX2</div>
+                    <div class="card">EX3</div>
+                    <div class="card">EX4</div>
+                    <div class="card">EX5</div>
+                </div>
             </div>
-            <div class="side-zones">
+
+            <div class="side right">
+                <div class="evolve-deck">エボルヴデッキ</div>
                 <div class="graveyard">墓場</div>
             </div>
         </div>
 
-        <div class="field player-field">
-            <div class="side-zones">
-                <div class="deck main-deck">メインデッキ</div>
-                <div class="deck evol-deck">エボルヴデッキ</div>
-                <div class="banish">消滅領域</div>
-            </div>
-            <div class="play-area">
-                <div class="field-area">
-                    <div class="field-slot">F1</div>
-                    <div class="field-slot">F2</div>
-                    <div class="field-slot">F3</div>
-                    <div class="field-slot">F4</div>
-                    <div class="field-slot">F5</div>
-                </div>
-                <div class="ex-area">
-                    <div class="ex-slot">EX1</div>
-                    <div class="ex-slot">EX2</div>
-                    <div class="ex-slot">EX3</div>
-                    <div class="ex-slot">EX4</div>
-                    <div class="ex-slot">EX5</div>
-                </div>
-            </div>
-            <div class="side-zones">
-                <div class="graveyard">墓場</div>
-            </div>
-        </div>
-
+        <!-- 自分の手札 -->
         <div class="hand player-hand">自分の手札</div>
+
     </div>
 </body>
 </html>
