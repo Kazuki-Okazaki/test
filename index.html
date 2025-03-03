@@ -12,6 +12,8 @@
 
         <div class="field opponent-field">
             <div class="side-zones">
+            </div>
+            <div class="side-zones">
                 <div class="graveyard">墓場</div>
                 <div class="deck main-deck">メインデッキ</div>
                 <div class="leader">相手リーダー</div>
@@ -37,9 +39,13 @@
                 <div class="deck evol-deck">エボルヴデッキ</div>
                 <div class="leader">自分リーダー</div>
             </div>
+            <div class="side-zones">
+            </div>
         </div>
 
         <div class="field player-field">
+            <div class="side-zones">
+            </div>
             <div class="side-zones">
                 <div class="deck evol-deck">エボルヴデッキ</div>
                 <div class="banish">消滅領域</div>
@@ -61,8 +67,13 @@
                 </div>
             </div>
             <div class="side-zones">
-                <div class="deck main-deck">メインデッキ</div><div id="deck"><button onclick="drawCard()">ドロー</button><p>残り枚数: <span id="deck-count">0</span></p></div>
+                <div class="deck main-deck">メインデッキ</div>
                 <div class="graveyard">墓場</div>
+            </div>
+            <div class="side-zones">
+                <div id="deck"><button onclick="drawCard()">ドロー</button>
+                    <p>残り枚数: <span id="deck-count">0</span></p>
+                </div>
             </div>
         </div>
 
