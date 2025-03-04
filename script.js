@@ -12,6 +12,7 @@ let deck = {
     evolve: []
 };
 
+let maindeck = []; // デッキを管理する配列
 let hand = []; // 手札を管理する配列
 
 getDeck();
@@ -23,14 +24,24 @@ function getDeck() {
     if (deckString) {
         deck = deckString ? JSON.parse(deckString) : [];
         console.log("取得したデッキ:", deck);
+        getMainDeck();
     } else {
         console.log("デッキが見つかりません");
     }
     updateDeckCount();
 }
+
+function getMainDeck() {
+    deck.forEach(card => {
+        for (let i = 0; i < card.count; i++) { // countは保存時に設定されている前提
+            maindeck.push(card);
+        }
+    });
+}
+
 // デッキの残り枚数を更新
 function updateDeckCount() {
-    document.getElementById("deck-count").innerText = deck.main.length;
+    document.getElementById("deck-count").innerText = maindeck.length;
 }
 
 // 手札を更新
@@ -50,12 +61,12 @@ function updateHandDisplay() {
 function drawCard() {
     console.log("デッキの初期状態:", deck);
     updateDeckCount();
-    if (deck.main.length === 0) {
+    if (maindeck.length === 0) {
         alert("デッキが空です！");
         return;
     }
 
-    let drawnCard = deck.main.shift();  // デッキの先頭から1枚取り出す
+    let drawnCard = maindeck.shift();  // デッキの先頭から1枚取り出す
     hand.push(drawnCard);  // 手札に追加
     updateDeckCount();  // デッキの残り枚数を更新
     updateHandDisplay(); // 手札の表示を更新
