@@ -32,9 +32,9 @@ function getDeck() {
 }
 
 function getMainDeck() {
-    deck.forEach(card => {
-        for (let i = 0; i < card.count; i++) { // countは保存時に設定されている前提
-            maindeck.push(card);
+    deck.forEach(main => {
+        for (let i = 0; i < main.count; i++) { // countは保存時に設定されている前提
+            maindeck.push(main);
         }
     });
 }
