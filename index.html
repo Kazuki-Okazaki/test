@@ -6,125 +6,109 @@
     <title>カードゲーム盤面</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            text-align: center;
         }
-        .game-board {
+        .board {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 90%;
+            gap: 20px;
         }
         .row {
             display: flex;
             justify-content: center;
-            width: 100%;
-            margin: 10px 0;
+            gap: 10px;
         }
-        .zone {
-            width: 100px;
-            height: 140px;
-            border: 1px solid black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 5px;
-            background-color: white;
-        }
-        .hand {
-            display: flex;
-            justify-content: center; /* 手札を中央揃え */
-            width: 100%;
-        }
-        .deck-list, .graveyard-list, .exile-list, .evolve-list {
-            display: none;
+        .list-container {
             position: absolute;
-            top: 50px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 400px;
-            background-color: white;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
             border: 1px solid black;
-            overflow-y: auto;
-            padding: 10px;
+            display: none;
         }
-        .close-button {
-            display: block;
-            margin: 10px auto;
-            padding: 5px;
-            background-color: red;
-            color: white;
-            text-align: center;
-            cursor: pointer;
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
         }
     </style>
 </head>
 <body>
+    <h1>カードゲーム盤面</h1>
 
-<div class="game-board">
-    <!-- 上段 -->
-    <div class="row">
-        <div class="zone">エボルヴデッキ</div>
-        <div class="zone">フィールド①</div>
-        <div class="zone">フィールド②</div>
-        <div class="zone">フィールド③</div>
-        <div class="zone">フィールド④</div>
-        <div class="zone">フィールド⑤</div>
-        <div class="zone">メインデッキ</div>
+    <div class="board">
+        <!-- 上段：エボルヴデッキ / フィールド(1-5) / メインデッキ -->
+        <div class="row">
+            <div class="zone">エボルヴデッキ</div>
+            <div class="zone">フィールド①</div>
+            <div class="zone">フィールド②</div>
+            <div class="zone">フィールド③</div>
+            <div class="zone">フィールド④</div>
+            <div class="zone">フィールド⑤</div>
+            <div class="zone">メインデッキ</div>
+        </div>
+
+        <!-- 中段：消滅領域 / EXエリア(1-5) / 墓場 -->
+        <div class="row">
+            <div class="zone">消滅領域</div>
+            <div class="zone">EXエリア①</div>
+            <div class="zone">EXエリア②</div>
+            <div class="zone">EXエリア③</div>
+            <div class="zone">EXエリア④</div>
+            <div class="zone">EXエリア⑤</div>
+            <div class="zone">墓場</div>
+        </div>
+
+        <!-- 下段：手札（中央揃え） -->
+        <div class="row" id="hand-zone">
+            <div class="zone">手札</div>
+        </div>
+
+        <!-- 一覧表示ボタン -->
+        <div class="row">
+            <button onclick="openList('deckList')">デッキ一覧</button>
+            <button onclick="openList('graveyardList')">墓場一覧</button>
+            <button onclick="openList('exileList')">消滅領域一覧</button>
+            <button onclick="openList('evolveList')">エボルヴデッキ一覧</button>
+        </div>
     </div>
-    
-    <!-- 中段 -->
-    <div class="row">
-        <div class="zone">消滅領域</div>
-        <div class="zone">EX①</div>
-        <div class="zone">EX②</div>
-        <div class="zone">EX③</div>
-        <div class="zone">EX④</div>
-        <div class="zone">EX⑤</div>
-        <div class="zone">墓場</div>
+
+    <!-- 各一覧表示のコンテナ -->
+    <div id="deckList" class="list-container">
+        <button class="close-btn" onclick="closeList()">閉じる</button>
+        <p>デッキのカード一覧</p>
     </div>
 
-    <!-- 下段（手札） -->
-    <div class="row hand">
-        <div class="zone">手札①</div>
-        <div class="zone">手札②</div>
-        <div class="zone">手札③</div>
-        <div class="zone">手札④</div>
-        <div class="zone">手札⑤</div>
+    <div id="graveyardList" class="list-container">
+        <button class="close-btn" onclick="closeList()">閉じる</button>
+        <p>墓場のカード一覧</p>
     </div>
-</div>
 
-<!-- 一覧表示エリア -->
-<div id="deckList" class="deck-list">
-    <p>デッキ一覧</p>
-    <div class="close-button" onclick="closeList('deckList')">閉じる</div>
-</div>
+    <div id="exileList" class="list-container">
+        <button class="close-btn" onclick="closeList()">閉じる</button>
+        <p>消滅領域のカード一覧</p>
+    </div>
 
-<div id="graveyardList" class="graveyard-list">
-    <p>墓場一覧</p>
-    <div class="close-button" onclick="closeList('graveyardList')">閉じる</div>
-</div>
+    <div id="evolveList" class="list-container">
+        <button class="close-btn" onclick="closeList()">閉じる</button>
+        <p>エボルヴデッキのカード一覧</p>
+    </div>
 
-<div id="exileList" class="exile-list">
-    <p>消滅領域一覧</p>
-    <div class="close-button" onclick="closeList('exileList')">閉じる</div>
-</div>
+    <script>
+        function openList(id) {
+            // すでに開いている一覧を閉じる
+            document.querySelectorAll('.list-container').forEach(list => list.style.display = 'none');
 
-<div id="evolveList" class="evolve-list">
-    <p>エボルヴデッキ一覧</p>
-    <div class="close-button" onclick="closeList('evolveList')">閉じる</div>
-</div>
+            // 指定の一覧を開く
+            document.getElementById(id).style.display = 'block';
+        }
 
-<script>
-    function closeList(id) {
-        document.getElementById(id).style.display = 'none';
-    }
-</script>
-
+        function closeList() {
+            document.querySelectorAll('.list-container').forEach(list => list.style.display = 'none');
+        }
+    </script>
 </body>
 </html>
